@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\begin{document}
+
+\title{Databáze hraču online her}
+\author{ Dan (Le) Trung, Rokoš Miroslav, Shebela Oleh, Suk Adam }
+\date{10. 11. 2021}
+\maketitle
+
+\begin{abstract}
+Tento dokument byl vypracovaný společně se všemi členy týmu.
+
+Tým pracoval samostatně a využíval všechny dostupné materiály na Moodle nebo internetu. Veškeré licenční a právní náležitosti jsou upraveny v tomto dokumentu.
+
+Těm, který není tento dokument určen nemají žádné právo na využití obsahu tohoto dokumentu.
+
+Veškerá data osob a předmětů jsou smyšlená a nezakládají se na skutečnosti.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\section{Popis databáze}
+Databáze obsahuje jména nebo přezdívky hráčů a jejich aktivitu v daných online hrách. Zárověn v tabulkách jsou uvedeny různé online hry, které hráčí hrají. Databáze je vytvořena na jazyce MySQL a využívá veškeré technologické vlastnosti této DB.
+\newpage
+\section{Licenční informace a HW požadavky}
+\subsection{Licence}
+\begin{itemize}
+    \item Mozilla Public License 2.0 (MPL)
+    \item Chrome device management license
+    \item Overleaf
+    \item GNU General Public License 2.0
+    \item Notepad
+\end{itemize}
+\subsection{Hardware}
+\subsection{Software}
+    \item Mozilla FireFox
+    \item Overleaf
+    \item PGmodeler
+\newpage
+\section{Enumerizace hodnot}
+\subsection{Normované enumerizace}
+\subsection{Custom enumerizace}
+\newpage
+\section{Databázová struktura}
+\subsection{ER diagram}
+ \includegraphics[width=160mm]{tabulky_hraci.png}
+\subsection{Tabulka Players}
+\subsubsection{Struktura}
+    \item name - jméno hráče
+    \item sex - pohlaví hráče
+    \item nickname - přezdívka
+    \item age - věk
+    \item birhtdate - datum narozeni
+    \item nationality - narodnost
+\subsubsection{Provázání tabulky}
+    \item vazba je one-to-many a propojuje se s tabulkou players-to-games
+\subsection{Tabulka game-info}
+\subsubsection{Struktura}
+    \item id - id hry
+    \item tittle-name - název herniho titulu
+    \item library - knihovna her
+\subsubsection{Provázání tabulky}
+    \item vazba je one-to-many s tabulkou players-to-games
+\subsection{Tabulka game}
+\subsubsection{Struktura}
+    \item rating - hodnoceni
+    \item tittle - herni titul
+    \item release date - datum vydani hry
+\subsubsection{Provázání tabulky}
+    \item vazba je one-to-many a propojuje se s tabulkou game-info
+
+
+\end{document}
