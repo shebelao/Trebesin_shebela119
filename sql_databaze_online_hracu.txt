@@ -1,0 +1,66 @@
+CREATE TABLE players (
+	id varchar(15),
+	name varchar(30),
+	sex char,
+	nickanem varchar(15),
+	age smallint,
+	birthdate date(8),
+	nationality varchar(30),
+	id_players_to_game varchar(15),
+	library_players_to_games smallint,
+	PRIMARY KEY (id), 
+	FOREIGN KEY (id_players_to_games),
+	FOREIGN KEY (library_players_to_games),
+	FOREIGN KEY (code_ci_sex) 
+);
+
+CREATE TABLE ci_sex (
+    code SMALLINT,
+    ID_sex int,
+    value varchar(10),
+    PRIMARY KEY (code)
+);
+CREATE TABLE ci_nationality (
+    code SMALLINT,
+    ID_nationality int,
+    value varchar(20),
+    PRIMARY KEY (code)
+);
+CREATE TABLE ci_nicknames (
+    code SMALLINT,
+    ID_nickname int,
+    value varchar(50),
+    PRIMARY KEY (code)
+);
+
+
+CREATE TABLE players_to_games(
+	PRIMARY KEY (id),
+	PRIMARY KEY (library)
+);
+
+
+CREATE TABLE library_of_games(
+	id smallint,
+	tittle_name varchar(15),
+	library smallint,
+    FOREIGN KEY (id_players_to_games),
+    FOREIGN KEY (library_players_to_games)
+);
+
+
+CREATE TABLE game(
+	game_name varchar(15),
+	rating SMALLINT,
+	tittle VARCHAR(10),
+	release_date date(8),
+	PRIMARY KEY (game_name),
+    FOREIGN KEY (tittle_name_library_of_games)
+);
+
+CREATE TABLE ci_title(
+	code SMALLINT,
+    ID_title SMALLINT,
+    value varchar(30),
+    PRIMARY KEY (code)
+);
